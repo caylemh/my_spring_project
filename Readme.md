@@ -7,3 +7,5 @@
 * Using *Create-React-App* to create & launch a React Application.
 * Exploring JSX (Babel) & Syntax conventions.
 * Refactoring Components into seperate files.
+#### Next steps with React
+* Creating a Basic React counter component.
