@@ -5,3 +5,5 @@
 ## Section 2 - Getting started with React:
 #### Basics with Components
 * Using *Create-React-App* to create & launch a React Application.
+* Exploring JSX (Babel) & Syntax conventions.
+* 

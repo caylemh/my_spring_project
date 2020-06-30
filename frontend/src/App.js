@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
@@ -14,25 +13,21 @@ function App() {
 }
 
 // Class Component
-class FirstComponent extends Component {
-    render() {
+function FirstComponent() {
         return ( 
             <div className = "firstComponent" >
                 <h3>First Component</h3>
             </div>
         );
-    }
 }
 
 // Class Component
-class SecondComponent extends Component {
-    render() {
+function SecondComponent() {
         return ( 
             <div className = "secondComponent" >
                 <h3>Second Component</h3>
             </div>
         );
-    }
 }
 
 // Class Component
