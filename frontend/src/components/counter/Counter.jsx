@@ -8,7 +8,6 @@ class Counter extends Component {
 
         this.state = {
             counter: 0,
-            // secondCounter: 100
         }
 
         this.increment = this.increment.bind(this);
@@ -34,7 +33,6 @@ class Counter extends Component {
     }
 
     increment(by) { // Update the state
-        //console.log(`increment from Parent - ${by}`);
         this.setState(
             (prevState) => {
                 return {counter: prevState.counter + by}
@@ -59,21 +57,7 @@ class Counter extends Component {
  
 
 class CounterButton extends Component {
-    // Define initial state in constructor
-    // state => counter =0
-    // constructor() {
-    //     super();
-
-    //     // this.state = {
-    //     //     counter: 0,
-    //     //     // secondCounter: 100
-    //     // }
-
-    //     // this.increment = this.increment.bind(this);
-    //     // this.decrement = this.decrement.bind(this);
-    //     // Using an Arrow function you do not have to bind()
-    // }
-
+   
     render() {
        // render = () => {}
         return (
@@ -86,27 +70,6 @@ class CounterButton extends Component {
         )
     }
 
-    // increment() { // Update the state
-    //     // increment = () => {}
-    //     // console.log('increment');
-    //     this.setState(
-    //         (prevState) => {
-    //             return {counter: prevState.counter + this.props.by}
-    //         }
-    //     )
-
-    //     this.props.incrementMethod(this.props.by);
-    // }
-
-    // decrement() {
-    //     this.setState(
-    //         (prevState) => {
-    //             return {counter: prevState.counter - this.props.by}
-    //         }
-    //     )
-
-    //     this.props.decrementMethod(this.props.by);
-    // }
 }
 
 CounterButton.defaultProps = {
