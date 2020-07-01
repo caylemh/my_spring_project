@@ -9,3 +9,5 @@
 * Refactoring Components into seperate files.
 #### Next steps with React
 * Creating a Basic React counter component.
+* Learning how to apply the View, Logic, Styling, State & handling Props for a Component.
+* Completing the React Counter App.
