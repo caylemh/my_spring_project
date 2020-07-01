@@ -7,7 +7,8 @@
 * Using *Create-React-App* to create & launch a React Application.
 * Exploring JSX (Babel) & Syntax conventions.
 * Refactoring Components into seperate files.
-#### Next steps with React
+## Section 3 - Next steps with React:
+#### Creating the Counter App
 * Creating a Basic React counter component.
 * Learning how to apply the View, Logic, Styling, State & handling Props for a Component.
 * Completing the React Counter App.
