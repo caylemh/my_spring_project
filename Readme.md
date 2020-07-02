@@ -2,6 +2,7 @@
 - The aim of the exercise is to create a **Todo-List Application** that uses React for the front-end, Spring Boot for the back-end & the implementation of a Database.
 --- 
 ## Section 1 - Introduction
+* Using React(Frontend), SpringBoot(Backend) & Java to create a Full Stack Java Application.
 ## Section 2 - Getting started with React:
 #### Basics with Components
 * Using *Create-React-App* to create & launch a React Application.
