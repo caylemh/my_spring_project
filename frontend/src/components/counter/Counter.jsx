@@ -26,7 +26,7 @@ class Counter extends Component {
                     <CounterButton by={5} incrementMethod={this.increment} decrementMethod={this.decrement}/>
                     <CounterButton by={10} incrementMethod={this.increment} decrementMethod={this.decrement}/>
                     <span className="count">{this.state.counter}</span>
-                    <button className="reset" onClick={this.reset}>Reset</button>
+                    <button id='countButtons' className="reset" onClick={this.reset}>Reset</button>
                 </div>
             </div>
         );
@@ -63,8 +63,8 @@ class CounterButton extends Component {
         return (
             //<div className="flex-counter">
                 <span>
-                    <button onClick={() => this.props.incrementMethod(this.props.by)}>+{this.props.by}</button>
-                    <button onClick={() => this.props.decrementMethod(this.props.by)}>-{this.props.by}</button>
+                    <button id='countButtons' onClick={() => this.props.incrementMethod(this.props.by)}>+{this.props.by}</button>
+                    <button id='countButtons' onClick={() => this.props.decrementMethod(this.props.by)}>-{this.props.by}</button>
                 </span>
             //</div>
         )

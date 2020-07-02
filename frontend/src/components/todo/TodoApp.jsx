@@ -1,14 +1,83 @@
 import React, { Component } from 'react';
-import { render } from '@testing-library/react';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import './TodoApp.css';
+
 
 class TodoApp extends Component {
     render() {
         return (
             <div className="TodoApp">
-                My Todo Application
+                <Router>
+                    <Switch>
+                        <Route path='/' exact component={LoginComponent}/>
+                        <Route path='/login' component={LoginComponent}/>
+                        <Route path='/welcome/:name' component={WelcomeComponent}/>
+                        <Route path='/todos' component={ListTodoComponent}/>
+                        <Route path='' component={ErrorComponent}/>
+                    </Switch>
+                </Router>
             </div>
         )
     }
+}
+
+class ListTodoComponent extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            todos : 
+            [
+                {id: 1, descrip: 'Learn React'},
+                {id: 2, descrip: 'Visit India'},
+                {id: 3, descrip: 'Make a Full Stack Application'},
+                {id: 4, descrip: 'Become a Full Stack Developer'}
+            ]
+            
+        }
+    }
+    render() {
+        return (
+            <span id='TodoApp'>
+                <h1>List Todo's</h1>
+                <table >
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.state.todos.map ( 
+                                todo =>
+                                    <tr>
+                                        <td>{todo.id}</td>
+                                        <td>{todo.descrip}</td>
+                                    </tr>
+                            )
+                        }
+                    </tbody>
+                </table>
+            </span>
+        ) 
+    }
+}
+
+class WelcomeComponent extends Component {
+    render() {
+        return (
+            <span id='TodoApp' className='Welcome'>
+                Welcome {this.props.match.params.name}
+                <Link to='/todos'>Go to the Todo List</Link>
+            </span>
+            
+        )
+    }
+}
+
+function ErrorComponent() {
+    return <span id='TodoApp'>An Error occurred. Contact Support at abcd efgh!</span>
 }
 
 class LoginComponent extends Component {
@@ -28,11 +97,10 @@ class LoginComponent extends Component {
 
     logonClick() {
         if(this.state.username==='caylemh' && this.state.pswd==='dummy') {
-            console.log('Successful');
-            this.setState({showSuccessMsg: true});
-            this.setState({hasLoginFailed: false});
+            this.props.history.push(`/welcome/${this.state.username}`);
+            // this.setState({showSuccessMsg: true});
+            // this.setState({hasLoginFailed: false});
         } else {
-            console.log("Failed!!!")
             this.setState({showSuccessMsg: false});
             this.setState({hasLoginFailed: true});
         }
@@ -48,7 +116,7 @@ class LoginComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div id='TodoApp'>
                 {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
                 {this.state.hasLoginFailed && <span>*** Invalid Credentials ***</span>}
                 {/*<ShowSuccessMsg showSuccessMsg={this.state.showSuccessMsg}/>*/}
@@ -76,4 +144,4 @@ class LoginComponent extends Component {
 //     return null;
 // }
 
-export default LoginComponent;
+export default TodoApp;

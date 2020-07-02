@@ -1,0 +1,25 @@
+#TodoApp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0.5rem;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+th {
+    color: white;
+    background-color: black;
+}
