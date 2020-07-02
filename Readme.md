@@ -12,3 +12,8 @@
 * Creating a Basic React counter component.
 * Learning how to apply the View, Logic, Styling, State & handling Props for a Component.
 * Completing the React Counter App.
+## Section 4 - Combining Spring Boot & React to build the Full Stack Todo Management Application:
+#### Starting the Todo Management App
+* Understanding React Controlled Components.
+* Adding Hardcoded Authentication.
+* Understanding Conditional Rendering with *&&*.
