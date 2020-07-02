@@ -18,3 +18,4 @@
 * Understanding React Controlled Components.
 * Adding Hardcoded Authentication.
 * Understanding Conditional Rendering with *&&*.
+* Adding Routing & Links to App Pages.
