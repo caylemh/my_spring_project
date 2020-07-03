@@ -20,3 +20,5 @@
 * Understanding Conditional Rendering with *&&*.
 * Adding Routing & Links to App Pages.
 * Added Styling to all pages using Bootstrap CSS.
+* Using *sessionStorage* & using it to create authentication for the application.
+* Refactoring the React Components into Javascript Modules.
