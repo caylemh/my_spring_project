@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch, NavLink} from 'react-router-dom';
 
+import AuthenticatedRoute from './AuthenticatedRoute.js';
+import LoginComponent from './LoginComponent.jsx';
+import ListTodoComponent from './ListTodoComponent.jsx';
+import LogoutComponent from './LogoutComponent.jsx';
+import FooterComponent from './FooterComponent.jsx';
+import HeaderComponent from './HeaderComponent.jsx';
+
+
 class TodoApp extends Component {
     render() {
         return (
@@ -10,9 +18,9 @@ class TodoApp extends Component {
                         <Switch>
                             <Route path='/' exact component={LoginComponent}/>
                             <Route path='/login' component={LoginComponent}/>
-                            <Route path='/welcome/:name' component={WelcomeComponent}/>
-                            <Route path='/todos' component={ListTodoComponent}/>
-                            <Route path='/logout' component={LogoutComponent}/>
+                            <AuthenticatedRoute path='/welcome/:name' component={WelcomeComponent}/>
+                            <AuthenticatedRoute path='/todos' component={ListTodoComponent}/>
+                            <AuthenticatedRoute path='/logout' component={LogoutComponent}/>
                             <Route path='' component={ErrorComponent}/>
                         </Switch>
                     <FooterComponent/>
@@ -22,103 +30,108 @@ class TodoApp extends Component {
     }
 }
 
-class HeaderComponent extends Component {
-    render() {
-        return(
-            <header>
-                <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
-                    <div><a href='http://www.example.com' target='_blank' className='navbar-brand'>Some Page</a></div>
-                    <ul className='navbar-nav'>
-                        <li>
-                            <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/welcome/caylemh' className='nav-link'>Home</NavLink>
-                        </li>
-                        <li>
-                            <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/todos' className='nav-link'>Todo List</NavLink>
-                        </li>
-                    </ul>
-                    <ul className='navbar-nav navbar-collapse justify-content-end'>
-                        <li>
-                            <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/login' className='nav-link'>Login</NavLink>
-                        </li>
-                        <li>
-                            <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/logout' className='nav-link'>Logout</NavLink> 
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        )
-    }
-}
+// class HeaderComponent extends Component {
+//     render() {
+//         const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
+//         //console.log(isUserLoggedIn);
 
-class FooterComponent extends Component {
-    render() {
-        return(
-            <footer className='footer'>
-                <div className='text-muted'>All Rights Reserved 2020 @Caylem Harris</div>
-            </footer>
-        )
-    }
-}
+//         return(
+//             <header>
+//                 <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
+//                     <div><a href='http://www.example.com' target='_blank' rel="noopener noreferrer" className='navbar-brand'>Some Page</a></div>
+//                     <ul className='navbar-nav'>
+//                         <li>
+//                             {isUserLoggedIn && <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/welcome/caylemh' className='nav-link'>Home</NavLink>}
+//                         </li>
+//                         <li>
+//                             {isUserLoggedIn && <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/todos' className='nav-link'>Todo List</NavLink>}
+//                         </li>
+//                     </ul>
+//                     <ul className='navbar-nav navbar-collapse justify-content-end'>
+//                         <li>
+//                             {!isUserLoggedIn && <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/login' className='nav-link'>Login</NavLink>}
+//                         </li>
+//                         <li>
+//                             {isUserLoggedIn && <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/logout' className='nav-link' onClick={AuthenticationService.logout}>
+//                                 Logout
+//                             </NavLink>} 
+//                         </li>
+//                     </ul>
+//                 </nav>
+//             </header>
+//         )
+//     }
+// }
 
-class LogoutComponent extends Component {
-    render() {
-        return(
-            <div>
-                <h1>You are logged out!!!</h1>
-                <div className='container'>
-                    Thank you for using our application. ;)
-                </div>
-            </div>
-        )
-    }
-}
+// class FooterComponent extends Component {
+//     render() {
+//         return(
+//             <footer className='footer'>
+//                 <div className='text-muted'>All Rights Reserved 2020 @Caylem Harris</div>
+//             </footer>
+//         )
+//     }
+// }
 
-class ListTodoComponent extends Component {
-    constructor(props) {
-        super(props);
+// class LogoutComponent extends Component {
+//     render() {
+//         return(
+//             <div>
+//                 <h1>You are logged out!!!</h1>
+//                 <div className='container'>
+//                     Thank you for using our application. ;)
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
 
-        this.state = {
-            todos : 
-            [
-                {id: 1, descrip: 'Learn React', done: false, targetDate: new Date()},
-                {id: 2, descrip: 'Visit India', done: false, targetDate: new Date()},
-                {id: 3, descrip: 'Make a Full Stack Application', done: false, targetDate: new Date()},
-                {id: 4, descrip: 'Become a Full Stack Developer', done: false, targetDate: new Date()}
-            ]
+// class ListTodoComponent extends Component {
+//     constructor(props) {
+//         super(props);
+
+//         this.state = {
+//             todos : 
+//             [
+//                 {id: 1, descrip: 'Learn React', done: false, targetDate: new Date()},
+//                 {id: 2, descrip: 'Visit India', done: false, targetDate: new Date()},
+//                 {id: 3, descrip: 'Make a Full Stack Application', done: false, targetDate: new Date()},
+//                 {id: 4, descrip: 'Become a Full Stack Developer', done: false, targetDate: new Date()}
+//             ]
             
-        }
-    }
-    render() {
-        return (
-            <div>
-                <h1>List Todo's</h1>
-                <div className='container'>
-                    <table className='table'>
-                        <thead>
-                            <tr>
-                                <th>Description</th>
-                                <th>Target Date</th>
-                                <th>Is Completed?</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                this.state.todos.map ( 
-                                    todo =>
-                                        <tr>
-                                            <td>{todo.descrip}</td>
-                                            <td>{todo.targetDate.toString()}</td>
-                                            <td>{todo.done.toString()}</td>
-                                        </tr>
-                                )
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        ) 
-    }
-}
+//         }
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <h1>List Todo's</h1>
+//                 <div className='container'>
+//                     <table className='table'>
+//                         <thead>
+//                             <tr>
+//                                 <th>Description</th>
+//                                 <th>Target Date</th>
+//                                 <th>Is Completed?</th>
+//                             </tr>
+//                         </thead>
+//                         <tbody>
+//                             {
+//                                 this.state.todos.map ( 
+//                                     todo =>
+//                                         <tr key={todo.id}>
+//                                             <td>{todo.descrip}</td>
+//                                             <td>{todo.targetDate.toString()}</td>
+//                                             <td>{todo.done.toString()}</td>
+//                                         </tr>
+//                                 )
+//                             }
+//                         </tbody>
+//                     </table>
+//                 </div>
+//             </div>
+//         ) 
+//     }
+// }
 
 class WelcomeComponent extends Component {
     render() {
@@ -139,55 +152,56 @@ function ErrorComponent() {
     return <div>An Error occurred. Contact Support at abcd efgh!</div>
 }
 
-class LoginComponent extends Component {
-    constructor(props) {
-        super(props);
+// class LoginComponent extends Component {
+//     constructor(props) {
+//         super(props);
 
-        this.state = {
-            username: 'Enter User Name...',
-            pswd: '**********',
-            hasLoginFailed: false,
-            showSuccessMsg: false
-        }
+//         this.state = {
+//             username: 'Enter User Name...',
+//             pswd: '**********',
+//             hasLoginFailed: false,
+//             showSuccessMsg: false
+//         }
 
-        this.handleChange = this.handleChange.bind(this);
-        this.logonClick = this.logonClick.bind(this);
-    }
+//         this.handleChange = this.handleChange.bind(this);
+//         this.logonClick = this.logonClick.bind(this);
+//     }
 
-    logonClick() {
-        if(this.state.username==='caylemh' && this.state.pswd==='dummy') {
-            this.props.history.push(`/welcome/${this.state.username}`);
-            // this.setState({showSuccessMsg: true});
-            // this.setState({hasLoginFailed: false});
-        } else {
-            this.setState({showSuccessMsg: false});
-            this.setState({hasLoginFailed: true});
-        }
+//     logonClick() {
+//         if(this.state.username==='caylemh' && this.state.pswd==='dummy') {
+//             AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.pswd);
+//             this.props.history.push(`/welcome/${this.state.username}`);
+//             // this.setState({showSuccessMsg: true});
+//             // this.setState({hasLoginFailed: false});
+//         } else {
+//             this.setState({showSuccessMsg: false});
+//             this.setState({hasLoginFailed: true});
+//         }
         
-    }
+//     }
 
-    handleChange(event) {
-        console.log(this.state);
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
+//     handleChange(event) {
+//         //console.log(this.state);
+//         this.setState({
+//             [event.target.name]: event.target.value
+//         });
+//     }
 
-    render() {
-        return (
-            <div>
-                <h1>Login</h1>
-                <div className='container'>
-                    {this.state.hasLoginFailed && <div className='alert alert-warning'>*** Invalid Credentials ***</div>}
-                    {this.state.showSuccessMsg && <div>*** Login Successful ***</div>}
-                    User Name: <input type='text' name='username' placeholder={this.state.username} onChange={this.handleChange}/>
-                    Password: <input type='password' name='pswd' placeholder={this.state.pswd} onChange={this.handleChange}/>
-                    <button className='btn btn-success' onClick={this.logonClick}>Login</button>
-                </div>
-            </div>
-            )
-    }
-}
+//     render() {
+//         return (
+//             <div>
+//                 <h1>Login</h1>
+//                 <div className='container'>
+//                     {this.state.hasLoginFailed && <div className='alert alert-warning'>*** Invalid Credentials ***</div>}
+//                     {this.state.showSuccessMsg && <div>*** Login Successful ***</div>}
+//                     User Name: <input type='text' name='username' placeholder={this.state.username} onChange={this.handleChange}/>
+//                     Password: <input type='password' name='pswd' placeholder={this.state.pswd} onChange={this.handleChange}/>
+//                     <button className='btn btn-success' onClick={this.logonClick}>Login</button>
+//                 </div>
+//             </div>
+//             )
+//     }
+// }
 
 // function ShowInvalidCredentials(props) {
 //     if(props.hasLoginFailed) {
