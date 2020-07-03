@@ -1,21 +1,73 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
-import './TodoApp.css';
-
 
 class TodoApp extends Component {
     render() {
         return (
-            <div className="TodoApp">
+            <div>
                 <Router>
-                    <Switch>
-                        <Route path='/' exact component={LoginComponent}/>
-                        <Route path='/login' component={LoginComponent}/>
-                        <Route path='/welcome/:name' component={WelcomeComponent}/>
-                        <Route path='/todos' component={ListTodoComponent}/>
-                        <Route path='' component={ErrorComponent}/>
-                    </Switch>
+                    <HeaderComponent/>
+                        <Switch>
+                            <Route path='/' exact component={LoginComponent}/>
+                            <Route path='/login' component={LoginComponent}/>
+                            <Route path='/welcome/:name' component={WelcomeComponent}/>
+                            <Route path='/todos' component={ListTodoComponent}/>
+                            <Route path='/logout' component={LogoutComponent}/>
+                            <Route path='' component={ErrorComponent}/>
+                        </Switch>
+                    <FooterComponent/>
                 </Router>
+            </div>
+        )
+    }
+}
+
+class HeaderComponent extends Component {
+    render() {
+        return(
+            <header>
+                <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
+                    <div><a href='http://www.example.com' target='_blank' className='navbar-brand'>Some Page</a></div>
+                    <ul className='navbar-nav'>
+                        <li>
+                            <Link to='/welcome/caylemh' className='nav-link'>Home</Link>
+                        </li>
+                        <li>
+                            <Link to='/todos' className='nav-link'>Todo List</Link>
+                        </li>
+                    </ul>
+                    <ul className='navbar-nav navbar-collapse justify-content-end'>
+                        <li>
+                            <Link to='/login' className='nav-link'>Login</Link>
+                        </li>
+                        <li>
+                            <Link to='/logout' className='nav-link'>Logout</Link> 
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        )
+    }
+}
+
+class FooterComponent extends Component {
+    render() {
+        return(
+            <footer className='footer'>
+                <div className='text-muted'>All Rights Reserved 2020 @Caylem Harris</div>
+            </footer>
+        )
+    }
+}
+
+class LogoutComponent extends Component {
+    render() {
+        return(
+            <div>
+                <h1>You are logged out!!!</h1>
+                <div className='container'>
+                    Thank you for using our application. ;)
+                </div>
             </div>
         )
     }
@@ -28,38 +80,42 @@ class ListTodoComponent extends Component {
         this.state = {
             todos : 
             [
-                {id: 1, descrip: 'Learn React'},
-                {id: 2, descrip: 'Visit India'},
-                {id: 3, descrip: 'Make a Full Stack Application'},
-                {id: 4, descrip: 'Become a Full Stack Developer'}
+                {id: 1, descrip: 'Learn React', done: false, targetDate: new Date()},
+                {id: 2, descrip: 'Visit India', done: false, targetDate: new Date()},
+                {id: 3, descrip: 'Make a Full Stack Application', done: false, targetDate: new Date()},
+                {id: 4, descrip: 'Become a Full Stack Developer', done: false, targetDate: new Date()}
             ]
             
         }
     }
     render() {
         return (
-            <span id='TodoApp'>
+            <div>
                 <h1>List Todo's</h1>
-                <table >
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            this.state.todos.map ( 
-                                todo =>
-                                    <tr>
-                                        <td>{todo.id}</td>
-                                        <td>{todo.descrip}</td>
-                                    </tr>
-                            )
-                        }
-                    </tbody>
-                </table>
-            </span>
+                <div className='container'>
+                    <table className='table'>
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Target Date</th>
+                                <th>Is Completed?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                this.state.todos.map ( 
+                                    todo =>
+                                        <tr>
+                                            <td>{todo.descrip}</td>
+                                            <td>{todo.targetDate.toString()}</td>
+                                            <td>{todo.done.toString()}</td>
+                                        </tr>
+                                )
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         ) 
     }
 }
@@ -67,17 +123,20 @@ class ListTodoComponent extends Component {
 class WelcomeComponent extends Component {
     render() {
         return (
-            <span id='TodoApp' className='Welcome'>
-                Welcome {this.props.match.params.name}
-                <Link to='/todos'>Go to the Todo List</Link>
-            </span>
+            <div className='Welcome'>
+                <h1>Welcome</h1>
+                <div className='container'>
+                    Welcome {this.props.match.params.name}
+                    <Link to='/todos'>Go to the Todo List</Link>
+                </div>
+            </div>
             
         )
     }
 }
 
 function ErrorComponent() {
-    return <span id='TodoApp'>An Error occurred. Contact Support at abcd efgh!</span>
+    return <div>An Error occurred. Contact Support at abcd efgh!</div>
 }
 
 class LoginComponent extends Component {
@@ -116,14 +175,15 @@ class LoginComponent extends Component {
 
     render() {
         return (
-            <div id='TodoApp'>
-                {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
-                {this.state.hasLoginFailed && <span>*** Invalid Credentials ***</span>}
-                {/*<ShowSuccessMsg showSuccessMsg={this.state.showSuccessMsg}/>*/}
-                {this.state.showSuccessMsg && <span>*** Login Successful ***</span>}
-                User Name: <input type='text' name='username' placeholder={this.state.username} onChange={this.handleChange}/>
-                Password: <input type='password' name='pswd' placeholder={this.state.pswd} onChange={this.handleChange}/>
-                <button onClick={this.logonClick}>Login</button>
+            <div>
+                <h1>Login</h1>
+                <div className='container'>
+                    {this.state.hasLoginFailed && <div className='alert alert-warning'>*** Invalid Credentials ***</div>}
+                    {this.state.showSuccessMsg && <div>*** Login Successful ***</div>}
+                    User Name: <input type='text' name='username' placeholder={this.state.username} onChange={this.handleChange}/>
+                    Password: <input type='password' name='pswd' placeholder={this.state.pswd} onChange={this.handleChange}/>
+                    <button className='btn btn-success' onClick={this.logonClick}>Login</button>
+                </div>
             </div>
             )
     }
@@ -131,7 +191,7 @@ class LoginComponent extends Component {
 
 // function ShowInvalidCredentials(props) {
 //     if(props.hasLoginFailed) {
-//         return <span>*** Invalid Credentials ***</span>
+//         return <div>*** Invalid Credentials ***</div>
 //     }
 
 //     return null;
@@ -139,7 +199,7 @@ class LoginComponent extends Component {
 
 // function ShowSuccessMsg(props) {
 //     if(props.showSuccessMsg) {
-//         return <span>*** Login Successful ***</span>
+//         return <div>*** Login Successful ***</div>
 //     }
 //     return null;
 // }
