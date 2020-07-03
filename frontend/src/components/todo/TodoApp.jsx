@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, NavLink} from 'react-router-dom';
 
 class TodoApp extends Component {
     render() {
@@ -30,18 +30,18 @@ class HeaderComponent extends Component {
                     <div><a href='http://www.example.com' target='_blank' className='navbar-brand'>Some Page</a></div>
                     <ul className='navbar-nav'>
                         <li>
-                            <Link to='/welcome/caylemh' className='nav-link'>Home</Link>
+                            <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/welcome/caylemh' className='nav-link'>Home</NavLink>
                         </li>
                         <li>
-                            <Link to='/todos' className='nav-link'>Todo List</Link>
+                            <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/todos' className='nav-link'>Todo List</NavLink>
                         </li>
                     </ul>
                     <ul className='navbar-nav navbar-collapse justify-content-end'>
                         <li>
-                            <Link to='/login' className='nav-link'>Login</Link>
+                            <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/login' className='nav-link'>Login</NavLink>
                         </li>
                         <li>
-                            <Link to='/logout' className='nav-link'>Logout</Link> 
+                            <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/logout' className='nav-link'>Logout</NavLink> 
                         </li>
                     </ul>
                 </nav>
@@ -127,7 +127,7 @@ class WelcomeComponent extends Component {
                 <h1>Welcome</h1>
                 <div className='container'>
                     Welcome {this.props.match.params.name}
-                    <Link to='/todos'>Go to the Todo List</Link>
+                    <NavLink activeStyle={{borderBottom: '2px solid red'}} to='/todos'>Go to the Todo List</NavLink>
                 </div>
             </div>
             
