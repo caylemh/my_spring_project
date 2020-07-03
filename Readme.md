@@ -19,3 +19,4 @@
 * Adding Hardcoded Authentication.
 * Understanding Conditional Rendering with *&&*.
 * Adding Routing & Links to App Pages.
+* Added Styling to all pages using Bootstrap CSS.
