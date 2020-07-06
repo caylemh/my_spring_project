@@ -29,3 +29,5 @@
 * Using *Path variables* in Spring Boot.
 ## Section 6 - Connecting Spring Boot REST API with React Frontend:
 * Connecting React with RESTFul API.
+* Introduction to *Axios* (Promise based HTTP client for the browser and node.js).
+* Adding Axios & creating Hel.
