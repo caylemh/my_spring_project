@@ -27,3 +27,5 @@
 * Initializing a RESTful Spring Application using *Spring Initializer*.
 * Creating a Spring *Hello World* Application.
 * Using *Path variables* in Spring Boot.
+## Section 6 - Connecting Spring Boot REST API with React Frontend:
+* Connecting React with RESTFul API.
