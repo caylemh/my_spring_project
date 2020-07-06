@@ -25,4 +25,4 @@
 ## Section 5 - Getting started with Spring Boot REST APIs:
 * An Introduction & explanation of Web Services.
 * Initializing a RESTful Spring Application using *Spring Initializer*.
-* Creating a Srping *Hello World* Application.
+* Creating a Spring *Hello World* Application.
