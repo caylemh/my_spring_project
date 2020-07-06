@@ -22,3 +22,7 @@
 * Added Styling to all pages using Bootstrap CSS.
 * Using *sessionStorage* & using it to create authentication for the application.
 * Refactoring the React Components into Javascript Modules.
+## Section 5 - Getting started with Spring Boot REST APIs:
+* An Introduction & explanation of Web Services.
+* Initializing a RESTful Spring Application using *Spring Initializer*.
+* Creating a Srping *Hello World* Application.
