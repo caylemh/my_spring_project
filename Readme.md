@@ -26,3 +26,4 @@
 * An Introduction & explanation of Web Services.
 * Initializing a RESTful Spring Application using *Spring Initializer*.
 * Creating a Spring *Hello World* Application.
+* Using *Path variables* in Spring Boot.
