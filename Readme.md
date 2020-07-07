@@ -31,3 +31,5 @@
 * Connecting React with RESTFul API.
 * Introduction to *Axios* (Promise based HTTP client for the browser and node.js).
 * Adding Axios & creating Hel.
+* Using Axios *GET* response & configuring REST Api for *CrossOrigins*.
+* Handling API Error Responses.
