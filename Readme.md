@@ -35,3 +35,4 @@
 * Handling API Error Responses.
 * Designing RESTful services for Todo Resource & creating REST API to retrieve the Todo List.
 * Connecting the React Frontend with Todo List RESTful service.
+* Understanding important React Lifecycle Methods.
