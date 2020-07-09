@@ -1,4 +1,4 @@
-package com.caylem.bootcamp.spring.restapi;
+package com.caylem.bootcamp.spring.restfulwebservices;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

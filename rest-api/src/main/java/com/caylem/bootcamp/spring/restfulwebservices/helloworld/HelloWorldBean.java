@@ -1,4 +1,4 @@
-package com.caylem.bootcamp.spring.restapi;
+package com.caylem.bootcamp.spring.restfulwebservices.helloworld;
 
 public class HelloWorldBean {
     private String message;

@@ -1,4 +1,4 @@
-package com.caylem.bootcamp.spring.restapi;
+package com.caylem.bootcamp.spring.restfulwebservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
