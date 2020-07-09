@@ -33,3 +33,4 @@
 * Adding Axios & creating Hel.
 * Using Axios *GET* response & configuring REST Api for *CrossOrigins*.
 * Handling API Error Responses.
+* Designing RESTful services for Todo Resource & creating REST API to retrieve the Todo List.
