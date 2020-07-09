@@ -7,6 +7,7 @@ export default class WelcomeComponent extends Component {
         super(props);
         this.retrieveWelcomeMessage = this.retrieveWelcomeMessage.bind(this);
         this.handleSuccessFullResponse = this.handleSuccessFullResponse.bind(this);
+        this.handleError = this.handleError.bind(this);
         this.state = {
             welcomeMessage: ' '
         }
@@ -15,6 +16,7 @@ export default class WelcomeComponent extends Component {
     render() {
         return (
             <div className='Welcome'>
+                {/*this.state.hasLoginFailed && <div className='alert alert-warning'>{ this.state.error.response}</div>*/}
                 <h1>Welcome</h1>
                 <div className='container'>
                     Welcome {this.props.match.params.name}.
@@ -59,13 +61,18 @@ export default class WelcomeComponent extends Component {
                 console.log(response.data);
                 console.log(response.status);
             }
-        );
-        //.catch()
+        )
+        .catch(error => this.handleError(error));
     }
 
     handleSuccessFullResponse(response) {
         this.setState({
             welcomeMessage: response.data.message
         })
+    }
+
+    handleError(error) {
+        console.log(error.response);
+        this.setState({ welcomeMessage: error.response.data.message })
     }
 }

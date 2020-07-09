@@ -43,7 +43,7 @@ class LoginComponent extends Component {
                 <h1>Login</h1>
                 <div className='container'>
                     {this.state.hasLoginFailed && <div className='alert alert-warning'>*** Invalid Credentials ***</div>}
-                    {this.state.showSuccessMsg && <div>*** Login Successful ***</div>}
+                    {/*this.state.showSuccessMsg && <div>*** Login Successful ***</div>*/}
                     User Name: <input type='text' name='username' placeholder={this.state.username} onChange={this.handleChange}/>
                     Password: <input type='password' name='pswd' placeholder={this.state.pswd} onChange={this.handleChange}/>
                     <button className='btn btn-success' onClick={this.logonClick}>Login</button>
