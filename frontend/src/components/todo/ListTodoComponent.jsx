@@ -4,6 +4,7 @@ import AuthenticationService from './AuthenticationService';
 
 class ListTodoComponent extends Component {
     constructor(props) {
+        console.log('constructor');     // First Method that is called in the lifecycle
         super(props);
 
         this.state = {
@@ -18,7 +19,19 @@ class ListTodoComponent extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillUnmount() {        // Method is called when component is when component is unmounted from the view
+        console.log('componentWillUnmount')
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {        // Fourth Method that is called in the lifecycle
+        console.log('shouldComponentUpdate')
+        console.log(nextProps)
+        console.log(nextState)
+        return true
+    }
+
+    componentDidMount() {       // Third Method that is called in the lifecycle
+        console.log('componentDidMount')
         let username = AuthenticationService.getLoggedInUser();
         TodoDataService.retrieveAllTodos(username)
         .then(
@@ -29,7 +42,8 @@ class ListTodoComponent extends Component {
         )
     }
 
-    render() {
+    render() {          // Second Method that is called in the lifecycle
+        console.log('render')
         return (
             <div>
                 <h1>List Todo's</h1>
