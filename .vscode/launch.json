@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RestApiApplication<restapi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.caylem.bootcamp.spring.restfulwebservices.RestApiApplication",
+            "projectName": "restapi",
+            "args": ""
+        }
+    ]
+}
