@@ -38,3 +38,4 @@
 * Understanding important React Lifecycle Methods.
 * Adding the *Delete Todo* feature in the React Frontend.
 * Creating the *Update* function for the Todo App. Creating the *Todo Component* and establishing a new Route.
+* Designing & validating forms using Formik.
