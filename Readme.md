@@ -37,3 +37,4 @@
 * Connecting the React Frontend with Todo List RESTful service.
 * Understanding important React Lifecycle Methods.
 * Adding the *Delete Todo* feature in the React Frontend.
+* Creating the *Update* function for the Todo App. Creating the *Todo Component* and establishing a new Route.
