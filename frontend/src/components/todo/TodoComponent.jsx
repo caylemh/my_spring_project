@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import moment from 'moment';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import TodoDataService from '../../api/todo/TodoDataService';
+import AuthenticationService from './AuthenticationService';
 
 class TodoComponent extends Component {
     constructor(props) {
@@ -8,7 +10,7 @@ class TodoComponent extends Component {
 
         this.state = {
             id : this.props.match.params.id,
-            desc : 'Learn Forms',
+            desc : '',
             targetDate : moment(new Date()).format('YYYY-MM-DD')
         }
 
@@ -17,6 +19,22 @@ class TodoComponent extends Component {
     }
 
     onSubmit(values) {
+        let username = AuthenticationService.getLoggedInUser();
+
+        let todo = {
+            id: this.state.id,
+            desc: values.desc,
+            targetDate: values.targetDate
+        }
+
+        if(this.state.id===-1) {
+            TodoDataService.createTodo(username, todo)
+            .then(() => { this.props.history.push('/todos') })
+        } else {
+            TodoDataService.updateTodo(username, this.state.id, todo)
+            .then(() => { this.props.history.push('/todos') })
+        }
+
         console.log(values);
     }
 
@@ -35,6 +53,19 @@ class TodoComponent extends Component {
         return errors
     }
 
+    componentDidMount() {
+        if(this.state.id===-1) {
+            return
+        }
+
+        let username = AuthenticationService.getLoggedInUser();
+        TodoDataService.retrieveTodo(username, this.state.id)
+        .then(response => this.setState({
+            desc: response.data.desc,
+            targetDate: moment(response.data.targetDate).format('YYYY-MM-DD')
+        }))
+    }
+
     render() {
         let { desc, targetDate } = this.state;  // Destructuring
         
@@ -48,6 +79,7 @@ class TodoComponent extends Component {
                         validateOnChange={false}
                         validateOnBlur={false}
                         validate={this.validate}
+                        enableReinitialize={true}
                     >
                         {
                             (props) => (
