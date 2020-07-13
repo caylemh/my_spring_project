@@ -39,3 +39,6 @@
 * Adding the *Delete Todo* feature in the React Frontend.
 * Creating the *Update* function for the Todo App. Creating the *Todo Component* and establishing a new Route.
 * Designing & validating forms using Formik.
+* Creating a Spring Boot Restful API for Updating & Adding a new Todo.
+* Creating PUT & POST methods.
+## Section 7 - Getting started with Spring Security & Basic Auth: 
