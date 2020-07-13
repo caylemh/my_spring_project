@@ -41,4 +41,5 @@
 * Designing & validating forms using Formik.
 * Creating a Spring Boot Restful API for Updating & Adding a new Todo.
 * Creating PUT & POST methods.
+* Learning about RESTful Web Services best practices.
 ## Section 7 - Getting started with Spring Security & Basic Auth: 
