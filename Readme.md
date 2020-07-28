@@ -3,18 +3,24 @@
 --- 
 ## Section 1 - Introduction
 * Using React(Frontend), SpringBoot(Backend) & Java to create a Full Stack Java Application.
+
 ## Section 2 - Getting started with React:
 #### Basics with Components
 * Using *Create-React-App* to create & launch a React Application.
 * Exploring JSX (Babel) & Syntax conventions.
 * Refactoring Components into seperate files.
+
 ## Section 3 - Next steps with React:
 #### Creating the Counter App
 * Creating a Basic React counter component.
 * Learning how to apply the View, Logic, Styling, State & handling Props for a Component.
 * Completing the React Counter App.
+
 ## Section 4 - Combining Spring Boot & React to build the Full Stack Todo Management Application:
 #### Creating the Frontend with React
+<details>
+<summary>Click here to expand</summary>
+
 * Understanding React Controlled Components.
 * Adding Hardcoded Authentication.
 * Understanding Conditional Rendering with *&&*.
@@ -22,12 +28,22 @@
 * Added Styling to all pages using Bootstrap CSS.
 * Using *sessionStorage* & using it to create authentication for the application.
 * Refactoring the React Components into Javascript Modules.
+</details>
+
 ## Section 5 - Getting started with Spring Boot REST APIs:
+<details>
+<summary>Click here to expand</summary>
+
 * An Introduction & explanation of Web Services.
 * Initializing a RESTful Spring Application using *Spring Initializer*.
 * Creating a Spring *Hello World* Application.
 * Using *Path variables* in Spring Boot.
+</details>
+
 ## Section 6 - Connecting Spring Boot REST API with React Frontend:
+<details>
+<summary>Click here to expand</summary>
+
 * Connecting React with RESTFul API.
 * Introduction to *Axios* (Promise based HTTP client for the browser and node.js).
 * Adding Axios & creating Hel.
@@ -42,4 +58,10 @@
 * Creating a Spring Boot Restful API for Updating & Adding a new Todo.
 * Creating PUT & POST methods.
 * Learning about RESTful Web Services best practices.
+</details>
+
 ## Section 7 - Getting started with Spring Security & Basic Auth: 
+<details>
+<summary>Click here to expand</summary>
+
+</details>
