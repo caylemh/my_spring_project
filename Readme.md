@@ -64,4 +64,14 @@
 <details>
 <summary>Click here to expand</summary>
 
+* Overview of Security with Basic Auth and JWT.
+* Setting up Spring Security.
+* Configure standard userid and password.   
+* Enhancing React Welcome Data Service to use Basic Auth.
+* Configure Spring Security to disable CSRF and enable OPTION Request.
+* Creating React Axios Interceptor to add Basic Auth Header.
+* Remove Hard Coding of User Credentials.
+* Create Basic Authentication RESTful Service in Spring Boot.
+* Enhance React Frontend to use Basic Auth API to Validate Login.
+
 </details>
