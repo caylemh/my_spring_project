@@ -1,4 +1,7 @@
 package com.caylem.bootcamp.spring.restfulwebservices.jwt.resource;
 
-public class AuthenticationException {
+public class AuthenticationException extends RuntimeException {
+    public AuthenticationException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }

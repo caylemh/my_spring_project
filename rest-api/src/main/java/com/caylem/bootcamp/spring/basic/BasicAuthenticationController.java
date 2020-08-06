@@ -1,4 +1,4 @@
-package com.caylem.bootcamp.spring.restfulwebservices.basic;
+package com.caylem.bootcamp.spring.basic;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

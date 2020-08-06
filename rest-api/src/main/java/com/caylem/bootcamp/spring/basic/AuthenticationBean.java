@@ -1,4 +1,4 @@
-package com.caylem.bootcamp.spring.restfulwebservices.basic;
+package com.caylem.bootcamp.spring.basic;
 
 public class AuthenticationBean {
     private String message;

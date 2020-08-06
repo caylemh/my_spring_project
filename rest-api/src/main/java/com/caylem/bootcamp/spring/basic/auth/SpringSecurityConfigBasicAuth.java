@@ -1,4 +1,4 @@
-package com.caylem.bootcamp.spring.restfulwebservices.basic.auth;
+package com.caylem.bootcamp.spring.basic.auth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
