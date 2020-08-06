@@ -75,3 +75,16 @@
 * Enhance React Frontend to use Basic Auth API to Validate Login.
 
 </details>
+
+## Section 8 - Getting started with JSON Web Tokens(JWTs): 
+<details>
+<summary>Click here to expand</summary>
+
+* Importing JWT framework.
+* Resolving JWT Compilation Errors.
+* Executing JWT Resources - Get Token, Refresh Token.
+* Understanding JWT Spring Security Framework Setup.
+* Using JWT Token in React Frontend.
+* Best Practices - Use Constants for URLs & Tokens.
+
+</details>
