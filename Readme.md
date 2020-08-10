@@ -88,3 +88,14 @@
 * Best Practices - Use Constants for URLs & Tokens.
 
 </details>
+
+## Section 9 - Integrating with the Backend using JPA and H2 Database: 
+<details>
+<summary>Click here to expand</summary>
+
+* Setting up the Todo Entity & populating data.
+* Connecting React with GET REST APIs.
+* Connecting POST, PUT & DELETE REST APIs.
+* Connecting React Frontend with JPA.
+
+</details>
