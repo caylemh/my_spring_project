@@ -99,3 +99,5 @@
 * Connecting React Frontend with JPA.
 
 </details>
+
+## Project Completed ##
